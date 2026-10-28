@@ -1,168 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>سنسي إف إف - البحث الذكي للحساسية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101113">
+  <meta name="description" content="Katshr — طلبات شحن الألعاب بسهولة عبر واتساب.">
+  <title>Katshr | شحن الألعاب</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
 </head>
 <body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Katshr الصفحة الرئيسية">
+      <span class="brand-mark">K<span>•</span></span>
+      <span class="brand-name">katshr</span>
+    </a>
+    <nav class="top-links" aria-label="التنقل الرئيسي">
+      <a href="#games">الألعاب</a>
+      <a href="#how">كيف تطلب؟</a>
+    </nav>
+    <button class="language-button" id="languageButton" type="button" aria-label="تغيير اللغة">EN</button>
+  </header>
 
-    <div class="app-container">
+  <main>
+    <section class="hero page-section" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span><span data-i18n="eyebrow">شحن ألعاب بطريقة أبسط</span></div>
+        <h1 data-i18n="heroTitle">جاهز للمرحلة<br><span>الجديدة؟</span></h1>
+        <p class="hero-description" data-i18n="heroDescription">اختر لعبتك، حدّد الباقة، وأرسل طلبك مباشرة. تجربة واضحة وسريعة من البداية للنهاية.</p>
+        <a class="primary-button" href="#games"><span data-i18n="browseGames">تصفّح الألعاب</span><span class="button-arrow" aria-hidden="true">↙</span></a>
+        <div class="hero-note"><span class="note-icon">✓</span><span data-i18n="heroNote">الطلب يتم تأكيده عبر واتساب</span></div>
+      </div>
+      <div class="hero-art" aria-label="تصميم تجريدي للألعاب">
+        <div class="art-ring ring-one"></div><div class="art-ring ring-two"></div>
+        <div class="art-card card-back"><span class="mini-symbol">✦</span></div>
+        <div class="art-card card-front">
+          <div class="art-top"><span>KATSHR</span><span class="art-dot"></span></div>
+          <div class="controller">
+            <span class="cross-horizontal"></span><span class="cross-vertical"></span>
+            <span class="action-dot dot-a"></span><span class="action-dot dot-b"></span>
+            <span class="action-dot dot-c"></span><span class="action-dot dot-d"></span>
+          </div>
+          <div class="art-bottom"><span data-i18n="powerUp">YOUR NEXT POWER-UP</span><strong>+ XP</strong></div>
+        </div>
+        <div class="floating-chip chip-top">+ LEVEL UP</div>
+        <div class="floating-chip chip-bottom"><span class="tiny-green"></span><span data-i18n="easyOrder">طلب سهل</span></div>
+      </div>
+    </section>
 
-        <!-- ================= شاشة البحث والاختيار الرئيسية ================= -->
-        <main id="searchScreen" class="screen active">
-            <header class="app-header">
-                <div class="brand">
-                    <div class="logo-box">
-                        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                        </svg>
-                    </div>
-                    <div class="brand-text">
-                        <h1>سنسي إف إف</h1>
-                        <span>ابحث عن هاتفك لاكتشاف الإعدادات</span>
-                    </div>
-                </div>
-                <div class="badge-update">OB55</div>
-            </header>
+    <section class="trust-strip" aria-label="مميزات الخدمة">
+      <div><span class="trust-icon">01</span><span data-i18n="trustOne">اختيار واضح</span></div>
+      <div><span class="trust-icon">02</span><span data-i18n="trustTwo">تفاصيل طلبك قبل الإرسال</span></div>
+      <div><span class="trust-icon">03</span><span data-i18n="trustThree">تأكيد عبر واتساب</span></div>
+    </section>
 
-            <!-- صندوق البحث الرئيسي البارز -->
-            <div class="main-search-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-                <input type="text" id="phoneSearchInput" placeholder="اكتب اسم هاتفك هنا (مثال: A54, Poco, Note 12)...">
-            </div>
+    <section class="games-section page-section" id="games">
+      <div class="section-heading">
+        <div><p class="section-kicker" data-i18n="chooseGame">اختر لعبتك</p><h2 data-i18n="gamesTitle">ما الذي تريد شحنه؟</h2></div>
+        <span class="section-count">04 <span data-i18n="gamesCount">ألعاب مبدئيًا</span></span>
+      </div>
+      <div class="games-grid" id="gamesGrid">
+        <article class="game-card" data-game="freefire">
+          <div class="game-art freefire-art"><span class="game-art-mark">FF</span><span class="game-art-caption">BATTLE<br>IN STYLE</span></div>
+          <div class="game-card-content"><div><h3>Free Fire</h3><p data-i18n="freefireDesc">جواهر وباقات اللعبة</p></div><button class="select-game" data-select-game="freefire" type="button" aria-label="اختيار Free Fire">↙</button></div>
+        </article>
+        <article class="game-card" data-game="pubg">
+          <div class="game-art pubg-art"><span class="pubg-frame">PUBG<br><b>MOBILE</b></span><span class="pubg-orbit"></span></div>
+          <div class="game-card-content"><div><h3>PUBG Mobile</h3><p data-i18n="pubgDesc">شدّات وباقات اللعبة</p></div><button class="select-game" data-select-game="pubg" type="button" aria-label="اختيار PUBG Mobile">↙</button></div>
+        </article>
+        <article class="game-card" data-game="mlbb">
+          <div class="game-art mlbb-art"><span class="mlbb-star">✦</span><span class="mlbb-word">MOBILE<br>LEGENDS</span></div>
+          <div class="game-card-content"><div><h3>Mobile Legends</h3><p data-i18n="mlbbDesc">ألماس وباقات اللعبة</p></div><button class="select-game" data-select-game="mlbb" type="button" aria-label="اختيار Mobile Legends">↙</button></div>
+        </article>
+        <article class="game-card" data-game="codm">
+          <div class="game-art codm-art"><span class="codm-target">◎</span><span class="codm-word">CALL OF<br><b>DUTY</b></span><span class="codm-mobile">MOBILE</span></div>
+          <div class="game-card-content"><div><h3>Call of Duty Mobile</h3><p data-i18n="codmDesc">نقاط وباقات اللعبة</p></div><button class="select-game" data-select-game="codm" type="button" aria-label="اختيار Call of Duty Mobile">↙</button></div>
+        </article>
+      </div>
+      <p class="catalog-note" data-i18n="catalogNote">قائمة الباقات والأسعار تُضبط من ملف الإعدادات بعد تحديد عروضك الفعلية.</p>
+    </section>
 
-            <!-- زر الكشف التلقائي السريع -->
-            <button id="quickDetectBtn" class="quick-detect-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                </svg>
-                <span>كشف جهازي الحالي تلقائياً</span>
-            </button>
+    <section class="how-section page-section" id="how">
+      <div class="section-heading"><div><p class="section-kicker" data-i18n="simpleSteps">بكل بساطة</p><h2 data-i18n="howTitle">كيف تطلب؟</h2></div></div>
+      <div class="steps-grid">
+        <div class="step-card"><span>01</span><h3 data-i18n="stepOneTitle">اختر اللعبة</h3><p data-i18n="stepOneText">ابدأ باختيار اللعبة التي تريد شحنها.</p></div>
+        <div class="step-card"><span>02</span><h3 data-i18n="stepTwoTitle">أدخل التفاصيل</h3><p data-i18n="stepTwoText">حدد الباقة واكتب معرّف اللاعب بدقة.</p></div>
+        <div class="step-card"><span>03</span><h3 data-i18n="stepThreeTitle">أرسل الطلب</h3><p data-i18n="stepThreeText">راجع الملخص وأرسله إلى واتساب للتأكيد.</p></div>
+      </div>
+    </section>
+  </main>
 
-            <!-- تصنيفات سريعة -->
-            <div class="category-chips">
-                <button class="chip active" data-brand="All">الكل</button>
-                <button class="chip" data-brand="Samsung">Samsung</button>
-                <button class="chip" data-brand="Xiaomi">Xiaomi / Poco</button>
-                <button class="chip" data-brand="iPhone">iPhone</button>
-                <button class="chip" data-brand="Oppo">Oppo</button>
-                <button class="chip" data-brand="Infinix">Infinix</button>
-            </div>
+  <footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">K<span>•</span></span><span class="brand-name">katshr</span></a><p data-i18n="footerText">طلبات شحن الألعاب، بخطوات واضحة.</p><span>© <span id="year"></span> Katshr</span></footer>
 
-            <!-- نتائج البحث / قائمة الأجهزة -->
-            <div class="results-container" id="resultsContainer">
-                <!-- يتم تعبئتها ديناميكياً -->
-            </div>
-        </main>
-
-        <!-- ================= شاشة عرض الإعدادات والنتائج ================= -->
-        <main id="resultScreen" class="screen">
-            <header class="result-header">
-                <button id="backToSearchBtn" class="back-btn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <line x1="19" y1="12" x2="5" y2="12"></line>
-                        <polyline points="12 19 5 12 12 5"></polyline>
-                    </svg>
-                    <span>بحث عن جهاز آخر</span>
-                </button>
-                <span class="badge-tier" id="resTier">احترافي</span>
-            </header>
-
-            <!-- بطاقة الجهاز المحدد -->
-            <div class="device-card-banner">
-                <h2 id="resModelName">اسم الهاتف</h2>
-                <div class="specs-pills">
-                    <span id="resRam">8 GB</span> • <span id="resHz">120 Hz</span>
-                </div>
-            </div>
-
-            <!-- أهم إعدادين: DPI وزر النار -->
-            <div class="dual-metrics-grid">
-                <div class="metric-box">
-                    <span class="m-label">قيمة DPI المناسبة</span>
-                    <span class="m-val" id="resDpi">480</span>
-                </div>
-                <div class="metric-box">
-                    <span class="m-label">حجم زر النار</span>
-                    <span class="m-val" id="resFireBtn">45%</span>
-                </div>
-            </div>
-
-            <!-- الحساسية (حتى 200%) -->
-            <section class="sensi-section">
-                <div class="sec-top">
-                    <h3>حساسية فري فاير (حد أقصى 200)</h3>
-                    <span class="mode-tag">هيدشوت ثابت</span>
-                </div>
-
-                <div class="sensi-list">
-                    <div class="sensi-item">
-                        <div class="sensi-info">
-                            <span class="sensi-val"><strong id="val-general">185</strong><small>/200</small></span>
-                            <span class="sensi-name">General (عام)</span>
-                        </div>
-                        <div class="progress-bar"><div class="fill" id="bar-general"></div></div>
-                    </div>
-
-                    <div class="sensi-item">
-                        <div class="sensi-info">
-                            <span class="sensi-val"><strong id="val-reddot">175</strong><small>/200</small></span>
-                            <span class="sensi-name">Red Dot (نقطة حمراء)</span>
-                        </div>
-                        <div class="progress-bar"><div class="fill" id="bar-reddot"></div></div>
-                    </div>
-
-                    <div class="sensi-item">
-                        <div class="sensi-info">
-                            <span class="sensi-val"><strong id="val-scope2x">165</strong><small>/200</small></span>
-                            <span class="sensi-name">2x Scope (منظار 2)</span>
-                        </div>
-                        <div class="progress-bar"><div class="fill" id="bar-scope2x"></div></div>
-                    </div>
-
-                    <div class="sensi-item">
-                        <div class="sensi-info">
-                            <span class="sensi-val"><strong id="val-scope4x">155</strong><small>/200</small></span>
-                            <span class="sensi-name">4x Scope (منظار 4)</span>
-                        </div>
-                        <div class="progress-bar"><div class="fill" id="bar-scope4x"></div></div>
-                    </div>
-
-                    <div class="sensi-item">
-                        <div class="sensi-info">
-                            <span class="sensi-val"><strong id="val-awm">90</strong><small>/200</small></span>
-                            <span class="sensi-name">AWM (القناصة)</span>
-                        </div>
-                        <div class="progress-bar"><div class="fill" id="bar-awm"></div></div>
-                    </div>
-
-                    <div class="sensi-item">
-                        <div class="sensi-info">
-                            <span class="sensi-val"><strong id="val-freeLook">140</strong><small>/200</small></span>
-                            <span class="sensi-name">Free Look (نظرة حرة)</span>
-                        </div>
-                        <div class="progress-bar"><div class="fill" id="bar-freeLook"></div></div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- زر النسخ -->
-            <footer class="action-footer">
-                <button id="copySettingsBtn" class="main-btn">
-                    <span>نسخ إعدادات 200% مع الـ DPI</span>
-                </button>
-            </footer>
-        </main>
-
-    </div>
-
-    <script src="main.js"></script>
+  <div class="modal-backdrop" id="orderBackdrop" hidden>
+    <section class="order-panel" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+      <div class="order-header"><button class="close-button" id="closeOrder" type="button" aria-label="إغلاق">×</button><div><p class="section-kicker" data-i18n="orderStep">الخطوة التالية</p><h2 id="orderTitle" data-i18n="orderTitle">تفاصيل الطلب</h2></div><div class="order-game-badge" id="orderGameBadge">K</div></div>
+      <div class="selected-game-line"><span data-i18n="selectedGame">اللعبة المختارة</span><strong id="selectedGameName">—</strong></div>
+      <form id="orderForm" novalidate>
+        <label for="offerSelect" data-i18n="offerLabel">الباقة المطلوبة</label>
+        <select id="offerSelect" required><option value="" data-i18n="offerDefault">اختر الباقة</option></select>
+        <p class="price-hint" id="priceHint" data-i18n="priceHint">السعر يُؤكَّد عند الطلب ما لم تُضف أسعارًا فعلية في الإعدادات.</p>
+        <label for="playerId" data-i18n="playerIdLabel">معرّف اللاعب (Player ID)</label>
+        <input id="playerId" name="playerId" autocomplete="off" maxlength="80" required placeholder="مثال: 123456789">
+        <label for="playerExtra" data-i18n="extraLabel">معلومات إضافية <span class="optional" data-i18n="optional">(اختياري)</span></label>
+        <input id="playerExtra" name="playerExtra" maxlength="120" autocomplete="off" placeholder="Server / Zone / ملاحظة">
+        <label for="customerName" data-i18n="nameLabel">اسمك <span class="optional" data-i18n="optional">(اختياري)</span></label>
+        <input id="customerName" name="customerName" maxlength="80" autocomplete="name" placeholder="الاسم">
+        <div class="order-summary"><span data-i18n="summaryLabel">ملخص الطلب</span><strong id="summaryText">—</strong><small id="summaryPrice">—</small></div>
+        <p class="form-error" id="formError" role="alert" hidden></p>
+        <button class="primary-button submit-order" id="submitOrder" type="submit"><span data-i18n="sendWhatsapp">متابعة إلى واتساب</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+        <p class="privacy-note" data-i18n="privacyNote">لا تطلب Katshr كلمة مرور حسابك أو رمز التحقق.</p>
+      </form>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 </body>
 </html>
